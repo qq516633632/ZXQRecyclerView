@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="bottom" >
+
+    <RelativeLayout
+        android:id="@+id/listview_header_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/listview_header_content_hight"
+        android:paddingTop="@dimen/listview_header_content_pindtop"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/listview_header_text">
+
+            <TextView
+                android:id="@+id/refresh_status_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/loading_text_color_1"
+                android:text="@string/listview_header_hint_normal" />
+
+            <LinearLayout
+                android:id="@+id/time_view_root"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="3dp" >
+
+                <TextView
+                    android:id="@+id/last_refresh_lable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/listview_header_last_time"
+                    android:textColor="@color/loading_text_color_1"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/last_refresh_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/loading_text_color_1"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/listview_header_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:layout_toLeftOf="@id/listview_header_text"
+            android:src="@drawable/ic_pulltorefresh_arrow" />
+
+        <ImageView
+            android:id="@+id/listview_header_progressbar"
+            android:layout_width="@dimen/listview_header_progressbar_size"
+            android:layout_height="@dimen/listview_header_progressbar_size"
+            android:layout_toLeftOf="@id/listview_header_text"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:visibility="invisible"
+            android:src="@drawable/progressbar"
+            />
+    </RelativeLayout>
+
+</LinearLayout>
