@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.novoda.bintray-release'
 group='com.github.qq516633632'
 android {
     compileSdkVersion 25
@@ -9,9 +10,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionName "1.0.0"
 
     }
     buildTypes {
@@ -20,6 +19,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+publish {
+    userOrg = 'qq516633632'//bintray.com用户名
+    groupId = 'com.zhuxiaoqing.zxqrecyclerviewlibrary'//jcenter上的路径
+    artifactId = 'ZXQRecyclerView'//项目名称
+    publishVersion = '1.0.0'//版本号
+    desc = '下拉刷新+上拉加载更多（基于RecyclerView）'//描述，不重要
+    website = 'https://github.com/qq516633632/ZXQRecyclerView'//网站，最好有，不重要
 }
 
 dependencies {
