@@ -146,12 +146,14 @@ public class ZXQRecyclerView extends RecyclerView {
             mFootView.setVisibility(View.GONE);
         }
     }
+
     public void showFoowView(){
         mFootView.setVisibility(View.VISIBLE);
     }
     public void gonFoowView(){
         mFootView.setVisibility(View.GONE);
     }
+
     public void refresh() {
         if (pullRefreshEnabled && mLoadingListener != null) {
             mRefreshHeader.setState(ArrowRefreshHeader.STATE_REFRESHING);
@@ -779,15 +781,7 @@ public class ZXQRecyclerView extends RecyclerView {
         }
     }
 
-    /**
-     * 设置没有更多线条颜色
-     * @param color
-     */
-    public void setNoMoreLinColor(int color){
-        if(mFootView instanceof LoadingMoreFooter){
-            ((LoadingMoreFooter) mFootView).setNoMoreLinColor(color);
-        }
-    }
+
 
     /**
      * 设置没有更多字体颜色
@@ -799,14 +793,6 @@ public class ZXQRecyclerView extends RecyclerView {
         }
     }
 
-    /**
-     * 设置没有更多字体和线条颜色
-     * @param color
-     */
-    public void setNoMoreTextAndLinColor(int color){
-        if(mFootView instanceof LoadingMoreFooter){
-            ((LoadingMoreFooter) mFootView).setNoMoreTextAndLinColor(color);
-        }
-    }
+
 
 }

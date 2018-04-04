@@ -3,11 +3,13 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-    android:padding="3dp">
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+    >
     <LinearLayout
         android:id="@+id/listview_foot_progress_rootview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:orientation="horizontal"
         android:gravity="center"
         android:visibility="visible"
@@ -27,23 +29,13 @@
             android:textColor="@color/loading_text_color_1"
             android:text="加载中..."/>
     </LinearLayout>
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/no_more_root_view"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
+        android:layout_height="40dp"
         android:visibility="gone"
         >
-        <View
-            android:id="@+id/no_more_linview_1"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="8dp"
-            android:layout_gravity="center_vertical"
-            android:background="@color/loading_text_color_1"
-            />
+
         <TextView
             android:id="@+id/no_more_textview"
             android:layout_width="wrap_content"
@@ -54,17 +46,10 @@
             android:layout_gravity="center_vertical"
             android:textColor="@color/loading_text_color_1"
             android:text="@string/nomore_loading"
+            android:layout_centerInParent="true"
             />
-        <View
-            android:id="@+id/no_more_linview_2"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical"
-            android:background="@color/loading_text_color_1"
-            android:layout_marginRight="8dp"
-            ></View>
-    </LinearLayout>
+
+    </RelativeLayout>
 
     
 </LinearLayout>

@@ -1,13 +1,9 @@
 package com.zhuxiaoqing.zxqrecyclerviewlibrary.view;
 
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -27,11 +23,10 @@ public class LoadingMoreFooter extends LinearLayout {
     private int loadmoer_color=0xffB5B5B5;
     private int style= ProgressStyle.SysProgress;
     private LinearLayout listview_foot_progress_rootview;
-    private LinearLayout no_more_root_view;//没有更多了的视图
+    private View no_more_root_view;//没有更多了的视图
     private LinearLayout mContainer;
     private TextView no_more_textview;//没有更多
-    private View no_more_linview_1;
-    private View no_more_linview_2;
+
 
 
     public LoadingMoreFooter(Context context) {
@@ -73,8 +68,7 @@ public class LoadingMoreFooter extends LinearLayout {
         progressCon.setView(progressView);
         mText= (TextView) findViewById(R.id.listview_foot_more);
         no_more_textview= (TextView) findViewById(R.id.no_more_textview);
-        no_more_linview_1=findViewById(R.id.no_more_linview_1);
-        no_more_linview_2=findViewById(R.id.no_more_linview_2);
+
 
         loadingHint = (String)getContext().getText(R.string.listview_loading);//加载中问文字
         noMoreHint = (String)getContext().getText(R.string.nomore_loading);//没有更多文字
@@ -82,7 +76,7 @@ public class LoadingMoreFooter extends LinearLayout {
         mText.setText(loadingHint);
 
         listview_foot_progress_rootview= (LinearLayout) findViewById(R.id.listview_foot_progress_rootview);
-        no_more_root_view= (LinearLayout) findViewById(R.id.no_more_root_view);
+        no_more_root_view=  findViewById(R.id.no_more_root_view);
 
     }
 
@@ -132,15 +126,7 @@ public class LoadingMoreFooter extends LinearLayout {
         progressCon.setView(progressView);
     }
 
-    /**
-     * 设置加载没有更多的线条颜色
-     * @param color
-     */
-    public void setNoMoreLinColor(int color){
-        no_more_linview_1.setBackgroundColor(color);
-        no_more_linview_2.setBackgroundColor(color);
 
-    }
 
     /**
      * 设置没有更多字体颜色
@@ -150,14 +136,7 @@ public class LoadingMoreFooter extends LinearLayout {
         no_more_textview.setTextColor(color);
     }
 
-    /**
-     * 设置没有更多文字和线条颜色
-     * @param color
-     */
-    public void setNoMoreTextAndLinColor(int color){
-        setNoMoreLinColor(color);
-        setNoMoreTextViewColor(color);
-    }
+
 
 
 

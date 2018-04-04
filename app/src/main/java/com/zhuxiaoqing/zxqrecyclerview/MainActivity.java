@@ -1,21 +1,20 @@
 package com.zhuxiaoqing.zxqrecyclerview;
 
-import android.os.SystemClock;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.zhuxiaoqing.zxqrecyclerviewlibrary.view.ZXQRecyclerView;
 
 public class MainActivity extends AppCompatActivity implements ZXQRecyclerView.LoadingListener {
     private ZXQRecyclerView zxqRecyclerView;
     private DmoAdapter dmoAdapter;
+    private View dom_header_view;
 
 
     @Override
@@ -24,11 +23,16 @@ public class MainActivity extends AppCompatActivity implements ZXQRecyclerView.L
         setContentView(R.layout.activity_main);
         zxqRecyclerView = (ZXQRecyclerView) findViewById(R.id.dmo_zxq_view);
         dmoAdapter = new DmoAdapter();
+
         zxqRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        dom_header_view=LayoutInflater.from(this).inflate(R.layout.dom_head_view,zxqRecyclerView,false);
         zxqRecyclerView.setLoadingListener(this);
+        //设置加载跟多文字
         zxqRecyclerView.setFootViewText("全力加载中", "宝宝已经到底了");
-        zxqRecyclerView.setNoMoreTextAndLinColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-        zxqRecyclerView.setLoadMoerColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+        //设置头布局
+        zxqRecyclerView.addHeaderView(dom_header_view);
+//        zxqRecyclerView.setNoMoreTextViewColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+//        zxqRecyclerView.setLoadMoerColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
         zxqRecyclerView.setAdapter(dmoAdapter);
     }
 
@@ -75,13 +79,20 @@ public class MainActivity extends AppCompatActivity implements ZXQRecyclerView.L
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-
+            holder.onBindViewHolder(position);
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
+            private TextView item_name_view;
+            private String leable="第%s个列表";
 
             public ViewHolder(View itemView) {
                 super(itemView);
+                item_name_view= (TextView) itemView.findViewById(R.id.item_name_view);
+            }
+
+            public void onBindViewHolder(int position){
+                item_name_view.setText(String.format(leable,position+1));
             }
         }
 

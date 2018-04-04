@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="loading_text_color_1">#666666</color>
+    <color name="loading_text_color_1">#888888</color>
     <color name="loading_text_color_2">#ffffff</color>
-    <color name="loading_lin_color">#666666</color>
+
 
 </resources>
