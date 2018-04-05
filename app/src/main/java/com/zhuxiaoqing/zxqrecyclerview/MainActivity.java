@@ -31,8 +31,6 @@ public class MainActivity extends AppCompatActivity implements ZXQRecyclerView.L
         zxqRecyclerView.setFootViewText("全力加载中", "宝宝已经到底了");
         //设置头布局
         zxqRecyclerView.addHeaderView(dom_header_view);
-//        zxqRecyclerView.setNoMoreTextViewColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-//        zxqRecyclerView.setLoadMoerColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
         zxqRecyclerView.setAdapter(dmoAdapter);
     }
 
