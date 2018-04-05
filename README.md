@@ -5,6 +5,7 @@ RecyclerView+下拉刷新+上拉加载+自定义头布局+配置加载跟多等�
 ## 效果图
 
 下拉刷新效果
+
 ![](https://github.com/qq516633632/ZXQRecyclerView/blob/master/img/device-2018-04-04-185046.gif '下拉刷新')
 
 上拉加载效果
