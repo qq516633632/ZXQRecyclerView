@@ -27,8 +27,6 @@ public class LoadingMoreFooter extends LinearLayout {
     private LinearLayout mContainer;
     private TextView no_more_textview;//没有更多
 
-
-
     public LoadingMoreFooter(Context context) {
 		super(context);
         initLoadIngView();
