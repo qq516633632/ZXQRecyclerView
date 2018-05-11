@@ -25,13 +25,12 @@ publish {
     userOrg = 'qq516633632'//bintray.com用户名
     groupId = 'com.zhuxiaoqing.zxqrecyclerviewlibrary'//jcenter上的路径
     artifactId = 'ZXQRecyclerView'//项目名称
-    publishVersion = '1.0.0'//版本号
+    publishVersion = '1.0.1'//版本号
     desc = '下拉刷新+上拉加载更多（基于RecyclerView）'//描述，不重要
     website = 'https://github.com/qq516633632/ZXQRecyclerView'//网站，最好有，不重要
 }
 
 dependencies {
-    provided 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:recyclerview-v7:25.3.1'
-    compile 'com.android.support:design:25.3.1'
+    provided 'com.android.support:design:25.3.1'
 }
